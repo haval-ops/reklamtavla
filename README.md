@@ -55,7 +55,7 @@ Systemet säkerställer också att samma kund aldrig visas två gånger i rad.
 
 ---
 
-### Projektstruktur
+## Projektstruktur
 src/
 main.cpp // Huvudprogram
 ads.cpp // Logik för kunder och reklam
