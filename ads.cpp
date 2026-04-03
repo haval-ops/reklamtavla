@@ -68,3 +68,7 @@ AdMessage getMessageForCustomer(int customerIndex, int minutesSinceStart) {
             return {"Error", STATIC_TEXT};
     }
 }
+
+std::string getCustomerName(int index) {
+    return customers[index].name;
+}
