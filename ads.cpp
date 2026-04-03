@@ -12,46 +12,41 @@ std::vector<Customer> customers = {
 
 int totalWeight = 14500;
 
-// Välj kund baserat på vikt
 int pickNextCustomer(int lastCustomer) {
-    int selected;
+    int selected = -1;
 
     do {
         int r = rand() % totalWeight;
         int sum = 0;
 
-        for (int i = 0; i < customers.size(); i++) {
+        for (int i = 0; i < static_cast<int>(customers.size()); i++) {
             sum += customers[i].weight;
             if (r < sum) {
                 selected = i;
                 break;
             }
         }
-
     } while (selected == lastCustomer);
 
     return selected;
 }
 
-// Hämta rätt meddelande
 AdMessage getMessageForCustomer(int customerIndex, int minutesSinceStart) {
-
     switch (customerIndex) {
-
-        case 0: { // Harry
+        case 0: {
             int r = rand() % 3;
             if (r == 0) return {"Kop bil hos Harry", SCROLL_TEXT};
             if (r == 1) return {"En god bilaffar for Harry!", STATIC_TEXT};
             return {"Hederlige Harrys Bilar", BLINK_TEXT};
         }
 
-        case 1: { // Farmor Anka
+        case 1: {
             int r = rand() % 2;
             if (r == 0) return {"Kop paj hos Farmor Anka", SCROLL_TEXT};
             return {"Skynda innan Marten atit alla pajer", STATIC_TEXT};
         }
 
-        case 2: { // Svarte Petter
+        case 2: {
             if (minutesSinceStart % 2 == 0) {
                 return {"Lat Petter bygga at dig", SCROLL_TEXT};
             } else {
@@ -59,13 +54,13 @@ AdMessage getMessageForCustomer(int customerIndex, int minutesSinceStart) {
             }
         }
 
-        case 3: { // Langben
+        case 3: {
             int r = rand() % 2;
             if (r == 0) return {"Mysterier? Ring Langben", STATIC_TEXT};
             return {"Langben fixar biffen", STATIC_TEXT};
         }
 
-        case 4: { // IOT reklam
+        case 4: {
             return {"Synas har? IOT:s Reklambyra", STATIC_TEXT};
         }
 
