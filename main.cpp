@@ -1,7 +1,8 @@
 #include <iostream>
-#include <unistd.h> // sleep
 #include <ctime>
+#include <cstdlib>
 #include "ads.h"
+#include "display.h"
 
 int main() {
     srand(time(NULL));
@@ -10,21 +11,19 @@ int main() {
     int elapsedSeconds = 0;
 
     while (true) {
-
         int minutesSinceStart = elapsedSeconds / 60;
 
         int customer = pickNextCustomer(lastCustomer);
-
         AdMessage ad = getMessageForCustomer(customer, minutesSinceStart);
 
         std::cout << "------------------------" << std::endl;
-        std::cout << "Visar reklam: " << std::endl;
+        std::cout << "Ny reklam vald:" << std::endl;
         std::cout << ad.text << std::endl;
-        std::cout << "Mode: " << ad.mode << std::endl;
+        std::cout << "Visningstid: 20 sekunder" << std::endl;
+
+        showAd(ad, 20);
 
         lastCustomer = customer;
-
-        sleep(20); // 20 sekunder
         elapsedSeconds += 20;
     }
 
