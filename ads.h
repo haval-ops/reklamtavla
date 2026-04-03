@@ -19,7 +19,6 @@ struct Customer {
     int weight;
 };
 
-// Funktioner
 int pickNextCustomer(int lastCustomer);
 AdMessage getMessageForCustomer(int customerIndex, int minutesSinceStart);
 
