@@ -114,5 +114,3 @@ I denna version simuleras displayen i terminalen.
 ## Kommentar
 
 Projektet är byggt för att uppfylla kraven för betyget G i kursen "Programmering av inbyggda system". Fokus har varit på funktionalitet, tydlig struktur och korrekt logik.
-
-## Projektstruktur
