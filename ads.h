@@ -19,6 +19,8 @@ struct Customer {
     int weight;
 };
 
+std::string getCustomerName(int index);
+
 int pickNextCustomer(int lastCustomer);
 AdMessage getMessageForCustomer(int customerIndex, int minutesSinceStart);
 
