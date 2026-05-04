@@ -1,5 +1,18 @@
 # reklamtavla 
 
+## Uppdatering efter feedback
+
+Projektet är uppdaterat efter feedback och är nu anpassat för ESP32 med ESP-IDF.
+
+Den tidigare terminalversionen har ersatts med en implementation för inbyggt system. Programmet använder `app_main()`, FreeRTOS `vTaskDelay()` och en 16x2 LCD-display via I2C.
+
+LCD-koppling:
+LCD VCC -> ESP32 5V
+LCD GND -> ESP32 GND
+LCD SDA -> ESP32 GPIO21
+LCD SCL -> ESP32 GPIO22
+
+
 
 ## Beskrivning
 
